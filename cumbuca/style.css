@@ -1,0 +1,404 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100vh;
+    background-image: url(img/Background.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.topo {
+    position: relative;
+}
+
+.topo img {
+    width: 100%;
+    height: 181px;
+}
+
+.logo-nav img {
+    width: 10rem;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.253);
+    border-radius: 50%;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 8rem;
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 0 0 15px 15px;
+    filter: blur(0.2px);
+    transition: all 0.3s ease;
+}
+
+.navbar.shrink {
+    padding: 5px 4rem;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.logo-nav.shrink-logo img {
+    background-color: transparent;
+    border-radius: 0;
+    width: 6rem;
+    transition: all 0.3s ease;
+}
+
+.links {
+    display: flex;
+    list-style: none;
+    gap: 5rem;
+}
+
+.links a {
+    text-decoration: none;
+    color: white;
+}
+
+.links a:hover {
+    transform: scale(0.5s) ease;
+}
+
+.links:hover {
+    transform: scale(0.5s) ease;
+}
+
+/* Seções principais */
+.main-conteiner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 20px;
+    margin-top: 80px;
+}
+
+.esquerda, .direita {
+    flex: 1 1 45%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.direita img {
+    width: 80%;
+    height: auto;
+    margin-top: -60px;
+}
+
+.titulo-sobre {
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+.descricao {
+    font-size: 20px;
+}
+
+.menu-tapiocas {
+    padding: 50px;
+    text-align: center;
+    margin-top: 8rem;
+    scroll-margin-top: 100px;
+}
+
+.titulo-cardapio {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.cardapio-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+/* CARD COM FUNDO ESCURO DE IMAGEM */
+.card {
+    position: relative;
+    background-image: url('https://cdn.dicionariopopular.com/imagens/girias-nordestinas-og.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    width: 250px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    color: white;
+}
+
+/* Escurece o fundo */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 0;
+}
+
+/* Conteúdo acima do escurecimento */
+.card img,
+.card h3,
+.card p,
+.card .preco,
+.card .botao-carrinho {
+    position: relative;
+    z-index: 1;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img,
+.card p,
+.card h3,
+.card .preco {
+    transition: transform 0.3s ease;
+}
+
+.card:hover img,
+.card:hover p,
+.card:hover h3,
+.card:hover .preco {
+    transform: translateY(-15px);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card h3 {
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+.card p {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.preco {
+    display: block;
+    font-weight: bold;
+    margin-top: 5px;
+    color: #ffd700;
+}
+
+.card:hover .preco {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Botão adicionar ao carrinho */
+.botao-carrinho {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%) translateY(25px);
+    opacity: 0;
+    background: linear-gradient(135deg, #ff4e00, #ffa500);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.card:hover .botao-carrinho {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Contato */
+.contato {
+    padding: 60px 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    margin: 4rem auto 2rem auto;
+    max-width: 600px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.contato .titulo-cardapio {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+.form-contato {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 10px;
+}
+
+.form-contato label {
+    font-weight: 600;
+    text-align: left;
+    color: #f2f2f2;
+}
+
+.form-contato input,
+.form-contato textarea {
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    font-family: inherit;
+    resize: vertical;
+    transition: outline 0.2s ease, background-color 0.3s ease;
+}
+
+.form-contato input:focus,
+.form-contato textarea:focus {
+    outline: 2px solid #ff6b00;
+    background-color: #fff;
+    color: #000;
+}
+
+.form-contato button {
+    margin-top: 10px;
+    padding: 12px 18px;
+    background: linear-gradient(45deg, #ff4e00, #ffa500);
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.form-contato button:hover {
+    background: linear-gradient(45deg, #ffa500, #ff4e00);
+    transform: scale(1.05);
+}
+
+/* Imagem inferior */
+.fundo-img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-top: 2rem;
+}
+
+.fundo-img img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    display: block;
+    border-radius: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 2rem;
+    }
+    .links {
+        gap: 2rem;
+        font-size: 14px;
+    }
+    .logo-nav img {
+        width: 8rem;
+    }
+    .main-conteiner {
+        flex-direction: column;
+        margin-top: 70px;
+        padding: 0 10px;
+    }
+    .esquerda, .direita {
+        flex: 1 1 100%;
+        padding: 10px 0;
+    }
+    .direita img {
+        width: 100%;
+        margin-top: 0;
+    }
+    .menu-tapiocas {
+        padding: 20px 10px;
+        margin-top: 4rem;
+    }
+    .cardapio-container {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 8px 1rem;
+    }
+    .links {
+        gap: 1rem;
+        font-size: 12px;
+    }
+    .logo-nav img {
+        width: 6rem;
+    }
+    .titulo-sobre {
+        font-size: 28px;
+    }
+    .descricao {
+        font-size: 16px;
+    }
+    .titulo-cardapio {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    .card {
+        width: 100%;
+        max-width: 320px;
+        padding: 15px;
+    }
+    .card h3 {
+        font-size: 18px;
+    }
+    .card p {
+        font-size: 13px;
+    }
+    .preco {
+        font-size: 14px;
+    }
+    .botao-carrinho {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+    .contato {
+        padding: 40px 15px;
+    }
+    .form-contato input,
+    .form-contato textarea {
+        font-size: 14px;
+    }
+    .form-contato button {
+        font-size: 15px;
+        padding: 10px 16px;
+    }
+}
