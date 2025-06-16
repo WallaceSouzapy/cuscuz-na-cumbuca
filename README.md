@@ -8,11 +8,6 @@ Você pode visualizar o site clicando aqui: [Cuscuz na Cumbuca - GitHub Pages](h
 
 ---
 
-## 📷 Preview
-
-![preview do projeto](./img/preview.png) <!-- Altere para o caminho correto da imagem, se houver -->
-
----
 
 ## 🛠️ Tecnologias Utilizadas
 
